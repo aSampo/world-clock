@@ -27,8 +27,17 @@ const Autocomplete: React.FC<AutocompleteProps> = ({ options }) => {
       onChange={handleOptionSelect}
       placeholder="Search..."
       value={value}
+      className="bg-white"
       isSearchable={true}
       closeMenuOnSelect={true}
+      theme={(theme) => ({
+        ...theme,
+        colors: {
+          ...theme.colors,
+          primary25: '#00ADB5',
+          primary: '#393E46'
+        }
+      })}
     />
   );
 };

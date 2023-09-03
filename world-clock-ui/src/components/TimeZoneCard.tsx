@@ -33,14 +33,14 @@ const TimeZoneCard: React.FC<TimeZoneCardProps> = ({ selectedOption }) => {
   }, [selectedOption]);
 
   return (
-    <div key={selectedOption} className="p-4 bg-blue-200 rounded-xl flex flex-col items-center gap-2 h-36">
-      <span
+    <div key={selectedOption} className="p-4 bg-light-blue rounded-xl flex flex-col items-center gap-2 h-36 text-">
+      <button
         className="cursor-pointer font-bold self-end"
         onClick={() => setSelectedOptions(selectedOptions.filter((item) => item !== selectedOption))}
       >
         <img src={closeSvg} alt="Cerrar" className="w-4 h-4" />
-      </span>
-      <h1 className="text-md sm:text-lg md:text-xl font-bold">{selectedOption}</h1>
+      </button>
+      <h1 className="text-md sm:text-lg md:text-xl font-bold text-black">{selectedOption}</h1>
       {timezoneDetails ? (
         <div className="flex flex-col items-center">
           <p>{timezoneDetails?.date}</p>
