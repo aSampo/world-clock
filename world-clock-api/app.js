@@ -15,7 +15,7 @@ function formatTimeZoneResponse(data) {
 
 app.get('/timezone', async (req, res) => {
   try {
-    const response = await axios.get(`${api}/timezone`);
+    const response = await axios.get(`${apiBaseUrl}/timezone`);
     const timezones = response.data;
     res.json(timezones);
   } catch (error) {
