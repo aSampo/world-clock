@@ -19,7 +19,8 @@ app.get('/timezone', async (req, res) => {
     const timezones = response.data;
     res.json(timezones);
   } catch (error) {
-    next(error);
+    console.error(error);
+    res.status(404).json({ error: 'Error!' });
   }
 });
 
@@ -32,15 +33,10 @@ app.get('/timezone/:area/:location/:region?', async (req, res) => {
     const response = await axios.get(timezoneEndpoint);
     res.json(formatTimeZoneResponse(response.data));
   } catch (error) {
-    next(error);
+    console.error(error);
+    res.status(404).json({ error: 'Error!' });
   }
 });
-
-app.use((err, req, res, next) => {
-  console.error(err);
-  res.status(500).json({ error: 'Error!' });
-});
-
 
 app.listen(PORT, () => {
   console.log(`Running on ${PORT}`);
