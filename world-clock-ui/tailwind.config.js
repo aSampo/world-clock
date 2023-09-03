@@ -11,6 +11,9 @@ export default {
       'gray-dark': '#393E46',
       'black': '#222831'
     },
+    fontFamily: {
+      lato: ['Lato']
+    }
   },
   plugins: [],
 }
